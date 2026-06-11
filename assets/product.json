@@ -1,0 +1,119 @@
+[
+  {
+    "nama":"Pulsa",
+    "deskripsi":"Pulsa all operator ready",
+    "info":"Pulsa Telkomsel, Indosat, Tri, Axis, Xl, dan operator lainnya dengan harga yang terjangkau, gunakan layanan Hazuma Store untuk mendapatkan lebih banyak promo!",
+    "harga": 2000,
+    "kategori":"produk digital",
+    "gambar":"pulsa.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20beli%20pulsa%20dong...."
+  },
+  {
+    "nama":"Internet",
+    "deskripsi":"Kouta dan paket data",
+    "info":"Paket data dengan harga terjangkau dan promo-promo menarik, tersedia dengan seluruh provider dan harga dapat bervariasi tergantung provider dan nomor tertentu, silahkan memesan untuk mengecek nomor anda!",
+    "harga": 2000,
+    "kategori":"produk digital",
+    "gambar":"Internet.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20beli%20paket%20data%20dong...."
+  },
+  {
+    "nama":"Listrik PLN",
+    "deskripsi":"Token listrik & tagihan",
+    "info":"melayani pembayaran tagihan listrik dan isi ulang token listrik dengan harga yang terjangkau, nikmati promonya hanya di Hazuma Store!",
+    "harga": 2500,
+    "kategori":"produk digital",
+    "gambar":"listrik.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20isi%20ulang%20token%20listrik%20dong...."
+  },
+  {
+    "nama":"PDAM",
+    "deskripsi":"Tagihan PDAM",
+    "info":"Mau bayar tagihan air PDAM?, hazuma store melayani dengan biaya admin yang terjangkau!",
+    "harga": 2000,
+    "kategori":"produk digital",
+    "gambar":"pdam.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20bayar%20tagihan%20pdam%20dong...."
+  },
+  {
+     "nama":"Transfer",
+    "deskripsi":"Antar Bank & tunai",
+    "info":"melayani transfer dan tarik tunai dari m-banking ataupun ewallet dengan biaya admin yang sangat terjangkau, kapan lagi transfer antar bank cuma 2k biaya admin!",
+    "harga": 2000,
+    "kategori":"produk digital",
+    "gambar":"transfer.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20transfer%20uang%20dong...."
+  },
+  {
+     "nama":"E-Wallet & uang digital",
+    "deskripsi":"Pembayaran digital (shopee) dan topup ewallet",
+    "info":"Hazuma Store juga melayani pembayaran checkout shopee dengan minim biaya admin. topup ewallet dengan biaya layanan paling muray ya di Hazuma Store",
+    "harga": 1500,
+    "kategori":"produk digital",
+    "gambar":"pembayaran.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20topup%20ewallet%20dong...."
+  },
+  {
+     "nama":"Topup Game",
+    "deskripsi":"FF, MLBB, ROBLOK dll",
+    "info":"nikmati topup game favorite kamu dengan harga terjangkau dan pastinya resmi dan aman di Hazuma Store!",
+    "harga": 2000,
+    "kategori":"produk digital",
+    "gambar":"game.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20topup%20game%20favlrite%20aku%20dong...."
+  },
+  {
+   "nama":"Retinol Serum",
+    "deskripsi":"Hanasui Power Retinol Serum 20ml",
+    "info":"Serum dari Hanasui yang mengandung retinol 1% cocok untuk kulit yang belum terbiasa atau baru mulai untuk memperbaiki jaringan kulitnya agar lebih halus. dapatkan dengan harga menarik di Hazuma Store",
+    "harga": 36000,
+    "kategori":"produk barang",
+    "gambar":"serum-retinol.jpg",
+    "link":"https://s.shopee.co.id/3LOOjUnbfz"
+  },
+  {
+    "nama":"Niacinamide Moisturizer",
+    "deskripsi":"Shinzui Whitessentials 30gr",
+    "info":"Moisturizer dari shinzui Whitessentials series mengandung niacinamide yang mampu membantu mencerahkan kulit, cocok untuk semua jenis kulit. dapatkan dengan harga ekslusif hanya di Hazuma Store!",
+    "harga": 41000,
+    "kategori":"produk barang",
+    "gambar":"moist-shinzui.jpg",
+    "link":"https://s.shopee.co.id/9zvIfqdKiZ"
+  },
+  {
+    "nama":"Sun Screen",
+    "deskripsi":"Azzarine Cicamide spf 35 40gr",
+    "info":"Lindungi kulitmu dari paparan sinar uv yang dapat membuat kulit gelap dan kusam!, gunakan sunscreen minimal spf 35 untuk melindunginya, dapatkan azzarine sunscreen cicamide barrier spf 35 pa+++ dengan harga terjangkau di Hazuma Store",
+    "harga": 36000,
+    "kategori":"produk barang",
+    "gambar":"sunscreen-azzarine.png",
+    "link":"https://s.shopee.co.id/6Aia6kCW36"
+  },
+  {
+    "nama":"Website",
+    "deskripsi":"Jasa Buat Website Sederhana",
+    "info":"Populerkan dan sebarkan bisnis anda dengan membuat website poertofolio sederhana tapi sangat besar pengaruhnya, rasakan peningkatan pada bisnis anda dengan membuat website di Hazuma Store",
+    "harga": 99000,
+    "kategori":"produk jasa",
+    "gambar":"Website.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20buat%20website%20portofolio%20untuk%20bisnis%20aku%20dong...."
+  },
+  {
+    "nama":"Desain",
+    "deskripsi":"Jasa Desain Poster, Flyer, dll",
+    "info":"butuh poster tapi males ngedit?, gunakan layanan Hazuma Store kalau begitu..!, hanyq dengan 5k kamu bisa nyantai sambil menunggu poster kamu jadii!!",
+    "harga": 5000,
+    "kategori":"produk jasa",
+    "gambar":"desain.jpeg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20dibuatin%20poster%20dong...."
+  },
+  {
+    "nama":"Sunscreen",
+    "deskripsi":"Sunscreen shinzui spf 35 30ml",
+    "info":"Sunscreen dari shinzui whitessentials series, selain melindungi dari sinar uv, juga dapat membantu mencerahkan kulit wajah kamu, dapatkan harga special hanya di Hazuma Store!",
+    "harga": 2000,
+    "kategori":"produk barang",
+    "gambar":"sunscreen-shinzui.jpg",
+    "link":"https://wa.me/6282138030814?text=Halo%20ka,%20aku%20mau%20beli%20sunscreem%20shinzui%20dong...."
+  }
+  ]

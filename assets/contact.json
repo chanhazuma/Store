@@ -1,0 +1,20 @@
+[
+  {
+    "id":"Whats App",
+    "userName":"Hazuma_Chan",
+    "link":"https://wa.me/6282138030814",
+    "gambar":"whatsapp.svg"
+  },
+  {
+    "id":"Instagram",
+    "userName":"Hanif_Zuhud",
+    "link":"https://www.instagram.com/hanif_zuhud?igsh=MXM5N25uZnVtamRleQ==",
+    "gambar":"instagram.svg"
+  },
+  {
+    "id":"More App",
+    "userName":"Qur'an Digital",
+    "link":"https://mushaf.hazuma.my.id",
+    "gambar":"mushaf.png"
+  }
+  ]
