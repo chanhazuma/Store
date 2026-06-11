@@ -1,0 +1,210 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+main{
+  background: linear-gradient(45deg, #ffffff, #6AECE1, #AEE2FF, #5DF8D8);
+  background-size: 320% 320%;
+  animation: mainBg 22s ease infinite alternate;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.header-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  margin-top: 10px;
+  height: 60px;
+  width: 80vw;
+  border-radius: 30px;
+  background: #ffffff30;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  border: 2px solid blue;
+  position: fixed;
+  z-index: 99;
+  transition: width 0.8s ease, left 0.8s ease;
+}
+.header-group>img{
+  border-radius: 50%;
+  height: 90%;
+}
+.nav-group{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-image{
+  height: 80%;
+}
+.list-group{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+}
+.list-group>li{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.profile-group, .product-group, .contact-group{
+  background: #ffffff30;
+  backdrop-filter: blur(8px);
+  border: 1px solid white;
+  width: 90%;
+  padding: 30px 15px;
+  border-radius: 20px;
+}
+.profile-group>h1, .product-group>h1, .contact-group>h1{
+  font-family: 'Fredoka', sans-serif;
+  margin-bottom: 8px;
+}
+.profile-group{
+  margin-top: 80px;
+}
+.profile-group> h2{
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 3px;
+  display: block;
+  min-height: 2rem;
+  width: fit-content;
+  position: relative;
+}
+.profile-group> h2::after{
+  content: "";
+  width: 3px;
+  background: #ffffffb0;
+  height: 1em;
+  display: block;
+  position: absolute;
+  right: -4px;
+  top: 0;
+  animation: kedip 0.8s step-end infinite;
+}
+.profile-group>p{
+  font-family: "Pliant", sans-serif;
+  text-align: justify;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+.product-group{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.product-group>section{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
+  width: 100%;
+}
+.product-group>section>h2{
+  display: block;
+  width: 100%;
+  text-align: center;
+  border-bottom: 8px double white;
+  padding: 8px;
+  margin-bottom: 10px;
+  grid-column: 1/-1;
+  font-family: "Titan One", sans-serif;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  background: cyan;
+  border: 1px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 2px;
+  transform: scale(0);
+  opacity: ;
+  transition: transform 0.5s ease;
+  justify-content: space-between;
+}
+.card.show{
+  transform: scale(1);
+  opacity: ;
+}
+.card>h3, .card>h4, .card>h5{
+  margin-left: 5px;
+  font-family: "Pliant", sans-serif;
+}
+.card>h4{
+  font-size: small;
+}
+.card>h5{
+  color: green;
+}
+.gambar-product{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+.btn{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn-pesan{
+  height: 30px;
+  width: 75%;
+  border-radius: 12px;
+  background: lightgreen;
+  border: 1px solid blue;
+  font-weight: bold;
+  font-family: "Pliant", sans-serif;
+}
+.btn-info{
+  height: 30px;
+  aspect-ratio: 1 / 1;
+  background: yellow;
+  border: 1px solid red;
+  border-radius: 50%;
+  font-weight: bold;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.contact-group{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 10px;
+}
+.contact-group>h1{
+  grid-column: 1/-1;
+}
+.card-contact{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  height: 55px;
+}
+.logo-contact{
+  height: 90%;
+  aspect-ratio: 1 / 1;
+}
+.container>h2{
+  font-family: 'Fredoka', sans-serif;
+}
+.container>h3{
+  font-family: 'Fredoka', sans-serif;
+  font-size: small;
+  color: gray;
+}
