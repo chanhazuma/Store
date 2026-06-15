@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Hazuma Store</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        .menu-btn { display: flex; gap: 10px; margin-bottom: 20px; }
+        button { flex: 1; padding: 10px; font-size: 16px; cursor: pointer; border: none; border-radius: 5px; background-color: #007BFF; color: white; }
+        button:hover { background-color: #0056b3; }
+        button.delete-btn { background-color: #DC3545; }
+        button.delete-btn:hover { background-color: #bd2130; }
+        .section { display: none; }
+        .active { display: block; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        .produk-item { padding: 10px; background: #eee; margin-bottom: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Admin Panel Hazuma Store</h2>
+    
+    <div class="menu-btn">
+        <button onclick="switchSection('tambah-section')">➕ Tambah Produk</button>
+        <button onclick="switchSection('edit-section')">✏️ Edit / Hapus Produk</button>
+    </div>
+
+    <hr>
+
+    <div id="tambah-section" class="section active">
+        <h3>Form Tambah Produk Baru</h3>
+        <form action="http://localhost:3000/api/produk/tambah" method="POST">
+            <div class="form-group">
+                <label>Nama Produk:</label>
+                <input type="text" name="nama" placeholder="Contoh: Pulsa" required>
+            </div>
+            <div class="form-group">
+                <label>Deskripsi Singkat:</label>
+                <input type="text" name="deskripsi" placeholder="Contoh: Pulsa all operator ready" required>
+            </div>
+            <div class="form-group">
+                <label>Info Lengkap:</label>
+                <textarea name="info" rows="3" placeholder="Info detail produk dan promo..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Harga (Rp):</label>
+                <input type="number" name="harga" placeholder="Contoh: 2000" required>
+            </div>
+            <div class="form-group">
+                <label>Kategori:</label>
+                <select name="kategori">
+                    <option value="produk digital">Produk Digital</option>
+                    <option value="produk fisik">Produk Fisik</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Nama File Gambar:</label>
+                <input type="text" name="gambar" placeholder="Contoh: pulsa.jpeg" required>
+            </div>
+            <div class="form-group">
+                <label>Link Transaksi (WhatsApp):</label>
+                <input type="url" name="link" placeholder="https://wa.me/..." required>
+            </div>
+            <button type="submit">Simpan Produk Baru</button>
+        </form>
+    </div>
+
+    <div id="edit-section" class="section">
+        <h3>Pilih Produk yang Ingin Di-edit</h3>
+        <div id="list-produk-container">
+            <p style="color: gray;">Sedang memuat data produk...</p>
+        </div>
+
+        <div id="form-edit-container" style="display: none; margin-top: 20px; border-top: 2px dashed #ccc; padding-top: 20px;">
+            <h3>Form Edit Produk</h3>
+            <form id="form-edit-produk" action="http://localhost:3000/api/produk/ubah" method="POST">
+                <input type="hidden" name="id" id="edit-id">
+
+                <div class="form-group">
+                    <label>Nama Produk:</label>
+                    <input type="text" name="nama" id="edit-nama" required>
+                </div>
+                <div class="form-group">
+                    <label>Deskripsi Singkat:</label>
+                    <input type="text" name="deskripsi" id="edit-deskripsi" required>
+                </div>
+                <div class="form-group">
+                    <label>Info Lengkap:</label>
+                    <textarea name="info" id="edit-info" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Harga (Rp):</label>
+                    <input type="number" name="harga" id="edit-harga" required>
+                </div>
+                <div class="form-group">
+                    <label>Kategori:</label>
+                    <select name="kategori" id="edit-kategori">
+                        <option value="produk digital">produk digital</option>
+                        <option value="produk fisik">produk fisik</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Nama File Gambar:</label>
+                    <input type="text" name="gambar" id="edit-gambar" required>
+                </div>
+                <div class="form-group">
+                    <label>Link Transaksi:</label>
+                    <input type="url" name="link" id="edit-link" required>
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit">💾 Simpan Perubahan</button>
+                    <button type="button" class="delete-btn" onclick="hapusProduk()">🗑️ Hapus Produk</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Menyimpan data produk yang diambil dari backend secara global
+    let dataProdukGlobal = [];
+
+    // Fungsi pindah tampilan menu Tambah / Edit
+    function switchSection(sectionId) {
+        document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+        if(sectionId === 'edit-section') {
+            muatDataProduk();
+        }
+    }
+
+    // Fungsi mengambil data produk dari backend Node.js kamu
+    function muatDataProduk() {
+        fetch('http://localhost:3000/api/produk')
+            .then(response => response.json())
+            .then(data => {
+                dataProdukGlobal = data;
+                const container = document.getElementById('list-produk-container');
+                container.innerHTML = ''; // Kosongkan text loading
+
+                if(data.length === 0) {
+                    container.innerHTML = '<p>Tidak ada produk tersedia.</p>';
+                    return;
+                }
+
+                // Tampilkan daftar nama produk beserta tombol edit
+                data.forEach((produk, index) => {
+                    container.innerHTML += `
+                        <div class="produk-item">
+                            <span><strong>${produk.nama}</strong> - Rp ${produk.harga}</span>
+                            <button style="flex:none; width:auto; padding:5px 10px;" onclick="bukaFormEdit(${index})">Edit</button>
+                        </div>
+                    `;
+                });
+            })
+            .catch(err => {
+                document.getElementById('list-produk-container').innerHTML = '<p style="color:red;">Gagal memuat data. Pastikan server Node.js sudah jalan!</p>';
+            });
+    }
+
+    // Fungsi memasukkan data lama ke dalam form input edit
+    function bukaFormEdit(index) {
+        const produk = dataProdukGlobal[index];
+        
+        document.getElementById('form-edit-container').style.display = 'block';
+        document.getElementById('edit-id').value = index; // simpan index array-nya
+        document.getElementById('edit-nama').value = produk.nama;
+        document.getElementById('edit-deskripsi').value = produk.deskripsi;
+        document.getElementById('edit-info').value = produk.info;
+        document.getElementById('edit-harga').value = produk.harga;
+        document.getElementById('edit-kategori').value = produk.kategori;
+        document.getElementById('edit-gambar').value = produk.gambar;
+        document.getElementById('edit-link').value = produk.link;
+        
+        // Scroll otomatis ke area form edit agar kelihatan
+        document.getElementById('form-edit-container').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Fungsi pemicu hapus produk
+    function hapusProduk() {
+        const index = document.getElementById('edit-id').value;
+        const namaProduk = document.getElementById('edit-nama').value;
+        
+        if(confirm(`Apakah kamu yakin ingin menghapus produk "${namaProduk}"?`)) {
+            // Mengirim data index yang mau dihapus ke server via query string / url
+            window.location.href = `http://localhost:3000/api/produk/hapus?id=${index}`;
+        }
+    }
+</script>
+</body>
+</html>
